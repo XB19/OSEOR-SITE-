@@ -1,0 +1,50 @@
+# OSEOR — site vitrine + tableau de bord + API + base de données
+# Démarrage : cp .env.example .env  (renseigner DB_PASSWORD et JWT_SECRET)  puis  docker compose up -d --build
+# Site : http://localhost:3000   ·   Admin : http://localhost:3000/admin
+
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: oseor_db
+      POSTGRES_USER: ${DB_USERNAME:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Renseignez DB_PASSWORD dans le fichier .env}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USERNAME:-postgres} -d oseor_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  backend:
+    build: ./oseor-backend
+    restart: unless-stopped
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/oseor_db
+      DB_USERNAME: ${DB_USERNAME:-postgres}
+      DB_PASSWORD: ${DB_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET:?Renseignez JWT_SECRET (au moins 32 caractères) dans le fichier .env}
+      MAIL_USERNAME: ${MAIL_USERNAME:-}
+      MAIL_PASSWORD: ${MAIL_PASSWORD:-}
+      MAIL_FROM: ${MAIL_FROM:-Info@oseor.tg}
+      SERVER_PORT: 8080
+      UPLOAD_DIR: /app/uploads
+    volumes:
+      - uploads:/app/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build: ./oseor-react
+    restart: unless-stopped
+    ports:
+      - "${SITE_PORT:-3000}:80"
+    depends_on:
+      - backend
+
+volumes:
+  db-data:
+  uploads:

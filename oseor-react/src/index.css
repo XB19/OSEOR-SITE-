@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-white font-sans text-slate-700 antialiased;
+  }
+  h1, h2, h3, h4, h5 {
+    @apply font-display text-brand-ink;
+  }
+  /* Les ancres (#entreprises, #projets…) ne passent pas sous le header fixe */
+  [id] {
+    scroll-margin-top: 110px;
+  }
+  ::selection {
+    @apply bg-brand-blue text-white;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .section {
+    @apply py-20 md:py-28;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-brand-red;
+  }
+  .eyebrow::before {
+    content: '';
+    @apply h-[2px] w-8 rounded-full bg-brand-red;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2.5 rounded-full px-7 py-3.5 text-sm font-semibold
+      transition-all duration-300 focus:outline-none focus-visible:ring-4 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-red {
+    @apply btn bg-brand-red text-white shadow-glow hover:-translate-y-0.5 hover:bg-brand-red-dark focus-visible:ring-brand-red/30;
+  }
+  .btn-blue {
+    @apply btn bg-brand-blue text-white shadow-soft hover:-translate-y-0.5 hover:bg-brand-blue-dark focus-visible:ring-brand-blue/30;
+  }
+  .btn-white {
+    @apply btn bg-white text-brand-blue shadow-lg hover:-translate-y-0.5 hover:bg-brand-blue-light focus-visible:ring-white/40;
+  }
+  .btn-ghost {
+    @apply btn border border-white/40 text-white backdrop-blur-sm hover:border-white hover:bg-white/10 focus-visible:ring-white/30;
+  }
+  .btn-outline {
+    @apply btn border border-brand-blue/20 bg-white text-brand-blue hover:border-brand-blue hover:bg-brand-blue hover:text-white focus-visible:ring-brand-blue/20;
+  }
+  .card {
+    @apply rounded-3xl border border-slate-100 bg-white shadow-card;
+  }
+  .field {
+    @apply w-full rounded-xl border border-slate-200 bg-slate-50/60 px-4 py-3 text-slate-800 outline-none transition
+      placeholder:text-slate-400 focus:border-brand-blue focus:bg-white focus:ring-4 focus:ring-brand-blue/10;
+  }
+  .field-error {
+    @apply border-brand-red/60 bg-brand-red-light/40 focus:border-brand-red focus:ring-brand-red/10;
+  }
+  .label {
+    @apply mb-2 block text-xs font-bold uppercase tracking-wider text-slate-600;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .bg-dots {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  .bg-dots-dark {
+    background-image: radial-gradient(rgba(3, 110, 177, 0.12) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  .text-gradient-gold {
+    background: linear-gradient(120deg, #f5d78e, #d4a017, #fff0b0, #d4a017, #f5d78e);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 4s linear infinite;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-20px) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(140px) rotate(360deg); opacity: 0; }
+}
+
+@keyframes pulse-ring {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(184, 137, 42, 0.45); }
+  60% { box-shadow: 0 0 0 14px rgba(184, 137, 42, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Soulignement animé des liens de navigation */
+.nav-link {
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.3s ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  background: #ae151e;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-link:hover::after,
+.nav-link-active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}

@@ -1,0 +1,33 @@
+# Dépendances et compilations
+node_modules/
+dist/
+target/
+*.class
+
+# Configuration locale et secrets (ne jamais publier)
+.env
+.env.local
+*.local
+
+# Fichiers envoyés depuis le tableau de bord
+oseor-backend/uploads/
+
+# Copie de référence du projet Angular d'origine
+_original/
+
+# Scripts de débogage hérités du dépôt d'origine (contiennent des identifiants en clair)
+oseor-backend/CheckAdmin.java
+oseor-backend/CheckPassword.java
+oseor-backend/GenerateHash.java
+oseor-backend/QueryEntreprises.java
+oseor-backend/TestBcrypt.java
+oseor-backend/UpdatePassword.java
+oseor-backend/test_db.java
+oseor-backend/test_bcrypt.py
+
+# Éditeurs / système
+.idea/
+.vscode/
+*.log
+.DS_Store
+Thumbs.db

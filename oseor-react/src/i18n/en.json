@@ -1,0 +1,240 @@
+{
+  "NAVBAR": {
+    "HOME": "Home",
+    "ENTREPRISES": "Subsidiaries",
+    "PROJETS": "Projects",
+    "SECTEURS": "Sectors",
+    "ABOUT": "About Us",
+    "CAREERS": "Careers",
+    "JOB_OFFERS": "Job Offers",
+    "SPONTANEOUS_CANDIDACY": "Spontaneous Candidacy",
+    "CONTACT": "Contact",
+    "BON_PLAN": "Hot Deal",
+    "NEWS": "News",
+    "TENDERS": "Call for Tenders"
+  },
+  "TOPBAR": {
+    "CONTACT": "Contact",
+    "EMAIL": "Email",
+    "LOCATION": "Location",
+    "ADDRESS": "Lomé, Agoènyivé BKS, D&D Building"
+  },
+  "HERO": {
+    "TITLE": "Accelerating growth for high-potential companies",
+    "DESCRIPTION": "OSEOR SA is an innovative and dynamic holding company with multiple stakes, committed to the sustainable growth of its subsidiaries. Through transparent governance, reliable performance indicators, and centralized support functions, the group ensures effective management of its activities.",
+    "BUTTON": "Discover our services"
+  },
+  "STATS": {
+    "ENTREPRISES": "+100 supported companies",
+    "PROJETS": "+50 funded projects",
+    "SECTEURS": "+100 sub-sectors covered",
+    "MISSIONS": "+100 missions completed"
+  },
+  "EXPERTISES": {
+    "TITLE": "Our expertises",
+    "STRATEGIC": "Strategic Investments",
+    "FINANCIAL": "Financial Engineering",
+    "GOVERNANCE": "Governance & Performance",
+    "DIGITAL": "Digitalization & Influence"
+  },
+  "POURQUOI": {
+    "TITLE": "Why choose OSEOR?",
+    "ITEM1_TITLE": "Tailored approach",
+    "ITEM1_DESC": "Each company benefits from unique support, adapted to its specific needs and growth ambitions.",
+    "ITEM2_TITLE": "Multidisciplinary expertise",
+    "ITEM2_DESC": "Our teams bring together sharp skills in finance, strategy, and technical assistance for a 360° vision.",
+    "ITEM3_TITLE": "Partner network",
+    "ITEM3_DESC": "Access a solid ecosystem of strategic and financial partners to accelerate your sustainable development."
+  },
+  "PROJETS": {
+    "TITLE": "Supported Projects",
+    "DESCRIPTION": "Discover some projects we have supported in their structuring and financing.",
+    "P1_TITLE": "Blitta Solar Power Plant",
+    "P2_TITLE": "Kara Industrial Complex",
+    "P3_TITLE": "Emergence Bridge"
+  },
+  "SECTEURS": {
+    "TITLE": "Areas of Intervention",
+    "DESCRIPTION": "We operate in key sectors of the economy with expertise adapted to each environment.",
+    "ENERGIE": "Energy",
+    "INDUSTRIE": "Industry",
+    "SERVICES": "Services",
+    "ENERGY_PAGE": {
+      "TITLE": "Energy Sector",
+      "DESC": "OSEOR supports major energy players to ensure a sustainable transition and regional energy sovereignty.",
+      "PORTFOLIO": "Corporate Portfolio",
+      "COMPANIES": "Sector Companies",
+      "BRIEF": "Brief Presentation",
+      "KEY_DATA": "KEY DATA",
+      "FORM": "Legal Form",
+      "HEADQUARTERS": "Headquarters",
+      "TARGET_SECTORS": "Target Sectors",
+      "GEO_PRESENCE": "Geo Presence",
+      "TARGET_COUNTRIES": "Target Countries",
+      "ACTIVITY": "Main Activity",
+      "INFRASTRUCTURE": "Depot Infrastructure",
+      "SEE_MORE": "See more",
+      "SEE_LESS": "See less"
+    },
+    "INDUSTRY_PAGE": {
+      "TITLE": "Industry Sector",
+      "DESC": "Industry at the heart of our strategy to build a strong, resilient, and forward-looking economy.",
+      "PORTFOLIO": "Industrial Portfolio",
+      "COMPANIES": "Sector Companies",
+      "SPECIALTIES": "Specialties",
+      "DETAILED_PRESENTATION": "Detailed Presentation"
+    },
+    "SERVICES_PAGE": {
+      "TITLE": "Services Sector",
+      "DESC": "Innovative and strategic services to propel companies toward operational excellence and growth.",
+      "PORTFOLIO": "Tertiary Portfolio",
+      "COMPANIES": "Sector Companies",
+      "EXPERTISE": "Expertises",
+      "STRATEGIC_PARTNERS": "Strategic Partners"
+    }
+  },
+  "BANDEAU": {
+    "TEXT": "OSEOR is a holding company specialized in investment and financial engineering. We support high-potential SMEs and start-ups in structuring, financing, and developing their activities."
+  },
+  "CTA": {
+    "TITLE": "Are you a high-potential company?",
+    "DESC": "Let's talk about your project and build your future success together.",
+    "BUTTON": "Contact us"
+  },
+  "PARTICIPATIONS": {
+    "TITLE": "Our Participations",
+    "DESCRIPTION": "Through its equity participations, OSEOR supports the growth of high-potential companies and contributes to building high-performing and sustainable groups.",
+    "FILTERS": {
+      "ALL": "All",
+      "ENERGY": "Energy",
+      "SERVICES": "Services",
+      "INDUSTRY": "Industry"
+    }
+  },
+  "ABOUT_PAGE": {
+    "BADGE": "About OSEOR",
+    "TITLE": "A strategic vision for growth",
+    "P1": "Founded in 2015, OSEOR supports the development of corporate groups through equity participation in high-potential companies.",
+    "P2": "Today, the company has 15 partner companies, illustrating the strength of its positioning and the extent of its commitment.",
+    "P3": "Became a Public Limited Company (SA) in 2020–2021, OSEOR has strengthened its credibility and capacity for action. Its headquarters are located in Lomé, Agoènyivé, BKS 1, D&D building.",
+    "GOV_TITLE": "Structured governance",
+    "GOV_P1": "A board of directors, chaired by Mr. DAOU AKLESSO Yérima, defines the major strategic orientations.",
+    "GOV_P2": "The general management is ensured by Mr. Pascal PAMASSI, who pilots the development and performance of the company."
+  },
+  "CAREERS_PAGE": {
+    "OFFERS_TITLE": "Job Offers",
+    "OFFERS_SUBTITLE": "Discover career opportunities available within OSEOR group companies and apply online.",
+    "SPONTANEOUS_TITLE": "Spontaneous Candidacy",
+    "SPONTANEOUS_SUBTITLE": "Can't find an offer that matches your profile? Submit your spontaneous application and our team will examine it with attention.",
+    "RH_EMAIL_TEXT": "You can also send your application to the following address:",
+    "RH_EMAIL_SPONTANEOUS_TEXT": "You can also send your application file to:",
+    "RH_EMAIL": "recrutement@oseor.tg",
+    "NO_OFFERS": "No job offers available at the moment.",
+    "POSTULER": "Apply",
+    "APPLY_NOW": "Send my application",
+    "FORM": {
+      "FULL_NAME": "Full Name",
+      "EMAIL": "Email Address",
+      "PHONE": "Phone Number",
+      "POSITION": "Position sought",
+      "PRESENTATION": "Candidate presentation",
+      "CV": "Curriculum Vitae (CV)",
+      "LM": "Cover Letter",
+      "DOCS": "Diplomas and certificates",
+      "ACCEPT_TERMS": "I accept the terms of processing my personal data.",
+      "REQUIRED": "This field is required",
+      "INVALID_EMAIL": "Invalid email",
+      "INVALID_PHONE": "Invalid phone",
+      "FILE_TYPE": "Allowed formats: PDF, DOC, DOCX",
+      "FILE_REQUIRED": "This file is required"
+    },
+    "CONFIRMATION": "Your application has been successfully registered. We thank you for your interest in OSEOR.",
+    "SPONTANEOUS_CONFIRMATION": "Your spontaneous application has been successfully registered. We thank you for your interest in OSEOR."
+  },
+  "BON_PLAN_PAGE": {
+    "BANNER_TEXT": "OSEOR celebrates 20 years of excellence serving West African organizations",
+    "HERO_DESC": "Special offers, promotions, and exclusive benefits selected for you.",
+    "ZENCARD_BTN": "Recharge my ZenCard",
+    "ACTIVE_OFFERS": "Active offers",
+    "ADVANTAGE_CARD": "Your advantage card",
+    "MODAL_TITLE": "ZenCard Recharge",
+    "MODAL_DESC": "Recharge your advantage card in a few clicks.",
+    "MODAL_STATUS": "Service available soon",
+    "MODAL_STATUS_DESC": "Online recharge is being deployed. Contact us for any emergency.",
+    "MODAL_CONTACT": "Contact us",
+    "MODAL_CLOSE": "Close",
+    "SECTION_TAG": "Offers & Promotions",
+    "SECTION_TITLE": "Our current hot deals",
+    "ENLARGE": "Enlarge",
+    "OFFER1": "ZenCard — Special Offer",
+    "OFFER2": "ZenCard — Exclusive Promotion",
+    "OFFER3": "ZenCard — Hot Deal #5",
+    "OFFER4": "ZenCard — Hot Deal #6",
+    "OFFER5": "ZenCard — Hot Deal #7",
+    "OFFER6": "ZenCard — Special Edition",
+    "OFFER7": "ZenCard — Limited Offer",
+    "OFFER8": "ZenCard — The Product"
+  },
+  "ADMIN": {
+    "SPACE": "Admin Space",
+    "LOGIN_DESC": "Log in to manage OSEOR",
+    "EMAIL_LABEL": "Professional Email",
+    "PASSWORD_LABEL": "Password",
+    "LOGIN_BTN": "Log in",
+    "INVALID_CREDENTIALS": "Invalid credentials or server error.",
+    "DASHBOARD_TITLE": "Overview",
+    "DASHBOARD_WELCOME": "Welcome to your OSEOR dashboard.",
+    "RECENT_ACTIVITY": "Recent activity",
+    "SYSTEM_STATUS": "System Status",
+    "ONLINE": "Online",
+    "CONNECTED": "Connected",
+    "SIDEBAR_MANAGEMENT": "Management",
+    "SIDEBAR_SYSTEM": "System",
+    "LOGOUT": "Logout",
+    "NAV_ADMIN_SPACE": "Administration Space",
+    "ADMINISTRATOR": "Administrator",
+    "EXPERTISES_TITLE": "Expertises",
+    "EXPERTISES_DESC": "Manage expertises displayed on the site.",
+    "PROJETS_TITLE": "Projects",
+    "PROJETS_DESC": "Manage the portfolio of supported projects.",
+    "MESSAGES_TITLE": "Messages",
+    "MESSAGES_DESC": "Consult contact requests received.",
+    "SETTINGS_TITLE": "Settings",
+    "SETTINGS_DESC": "Manage your profile and system configurations.",
+    "ADD": "Add",
+    "NEW_PROJECT": "New Project",
+    "TABLE_ICON": "Icon",
+    "TABLE_TITLE": "Title",
+    "TABLE_DESC": "Description",
+    "TABLE_ACTIONS": "Actions",
+    "CANCEL": "Cancel",
+    "SAVE": "Save",
+    "UPDATE": "Update",
+    "NO_MESSAGE": "No message",
+    "NO_MESSAGE_DESC": "You haven't received any contact requests yet.",
+    "REPLY": "Reply",
+    "PROFILE": "Admin Profile",
+    "NEW_PASSWORD": "New password",
+    "SAVE_CHANGES": "Save changes",
+    "CATEGORY": "Category",
+    "MESSAGES_EMPTY": "No message",
+    "MESSAGES_EMPTY_DESC": "You haven't received any contact requests yet."
+  },
+  "FOOTER": {
+    "DESCRIPTION": "OSEOR is a holding company specialized in investment and financial engineering. We support high-potential SMEs and start-ups in structuring, financing, and developing their activities.",
+    "QUICK_LINKS": "Quick Links",
+    "CONTACT": "Contact",
+    "LEGAL": "Legal",
+    "PRIVACY": "Privacy Policy",
+    "TERMS": "General Terms",
+    "MENTIONS": "Legal Notices",
+    "RIGHTS": "All rights reserved.",
+    "MADE_BY": "Designed & Developed by KOMADAN Josué K.M."
+  },
+  "COMMON": {
+    "SEE_DETAILS": "See details",
+    "LOADING": "Loading...",
+    "ERROR": "An error has occurred.",
+    "YEARS": "years"
+  }
+}

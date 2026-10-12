@@ -1,0 +1,240 @@
+{
+  "NAVBAR": {
+    "HOME": "Accueil",
+    "ENTREPRISES": "Filiales",
+    "PROJETS": "Projets",
+    "SECTEURS": "Secteurs",
+    "ABOUT": "À propos",
+    "CAREERS": "Carrières",
+    "JOB_OFFERS": "Offres d'emploi",
+    "SPONTANEOUS_CANDIDACY": "Candidature spontanée",
+    "CONTACT": "Contact",
+    "BON_PLAN": "Bon Plan",
+    "NEWS": "Actualité",
+    "TENDERS": "Appel d'offre"
+  },
+  "TOPBAR": {
+    "CONTACT": "Contact",
+    "EMAIL": "Email",
+    "LOCATION": "Localisation",
+    "ADDRESS": "Lomé, Agoènyivé BKS, Immeuble D&D"
+  },
+  "HERO": {
+    "TITLE": "Accélérons la croissance des entreprises à fort potentiel",
+    "DESCRIPTION": "OSEOR SA est une holding avec des participations multiples, innovante et dynamique, engagée dans la croissance durable de ses filiales. Grâce à une gouvernance transparente, des indicateurs de performance fiables et des fonctions support centralisées, le groupe assure un pilotage efficace de ses activités.",
+    "BUTTON": "Découvrir nos services"
+  },
+  "STATS": {
+    "ENTREPRISES": "+100 entreprises accompagnées",
+    "PROJETS": "+50 projets financés",
+    "SECTEURS": "+100 sous secteurs couverts",
+    "MISSIONS": "+100 missions réalisées"
+  },
+  "EXPERTISES": {
+    "TITLE": "Nos expertises",
+    "STRATEGIC": "Investissements Stratégiques",
+    "FINANCIAL": "Ingénierie financière",
+    "GOVERNANCE": "Gouvernance & Performance",
+    "DIGITAL": "Digitalisation & Influence"
+  },
+  "POURQUOI": {
+    "TITLE": "Pourquoi choisir OSEOR ?",
+    "ITEM1_TITLE": "Approche sur mesure",
+    "ITEM1_DESC": "Chaque entreprise bénéficie d'un accompagnement unique, adapté à ses besoins spécifiques et à ses ambitions de croissance.",
+    "ITEM2_TITLE": "Expertise multidisciplinaire",
+    "ITEM2_DESC": "Nos équipes réunissent des compétences pointues en finance, stratégie et assistance technique pour une vision à 360°.",
+    "ITEM3_TITLE": "Réseau de partenaires",
+    "ITEM3_DESC": "Accédez à un écosystème solide de partenaires stratégiques et financiers pour accélérer votre développement durable."
+  },
+  "PROJETS": {
+    "TITLE": "Projets accompagnés",
+    "DESCRIPTION": "Découvrez quelques projets que nous avons accompagnés dans leur structuration et leur financement.",
+    "P1_TITLE": "Centrale Solaire Blitta",
+    "P2_TITLE": "Complexe Industriel Kara",
+    "P3_TITLE": "Pont de l'Émergence"
+  },
+  "SECTEURS": {
+    "TITLE": "Secteurs d’intervention",
+    "DESCRIPTION": "Nous intervenons dans des secteurs clés de l’économie avec une expertise adaptée à chaque environnement.",
+    "ENERGIE": "Énergie",
+    "INDUSTRIE": "Industrie",
+    "SERVICES": "Services",
+    "ENERGY_PAGE": {
+      "TITLE": "Secteur Énergie",
+      "DESC": "OSEOR soutient les acteurs majeurs de l'énergie pour garantir une transition durable et une souveraineté énergétique régionale.",
+      "PORTFOLIO": "Portefeuille Corporate",
+      "COMPANIES": "Entreprises du Secteur",
+      "BRIEF": "Brève présentation",
+      "KEY_DATA": "DONNÉES-CLÉS",
+      "FORM": "Forme juridique",
+      "HEADQUARTERS": "Siège social",
+      "TARGET_SECTORS": "Secteurs cibles",
+      "GEO_PRESENCE": "Présence géo",
+      "TARGET_COUNTRIES": "Pays cibles",
+      "ACTIVITY": "Activité principale",
+      "INFRASTRUCTURE": "Infrastructures du dépôt",
+      "SEE_MORE": "Voir plus",
+      "SEE_LESS": "Voir moins"
+    },
+    "INDUSTRY_PAGE": {
+      "TITLE": "Secteur Industrie",
+      "DESC": "L'industrie au cœur de notre stratégie pour bâtir une économie forte, résiliente et tournée vers l'avenir.",
+      "PORTFOLIO": "Portefeuille Industriel",
+      "COMPANIES": "Entreprises du Secteur",
+      "SPECIALTIES": "Spécialités",
+      "DETAILED_PRESENTATION": "Présentation Détaillée"
+    },
+    "SERVICES_PAGE": {
+      "TITLE": "Secteur Services",
+      "DESC": "Des services innovants et stratégiques pour propulser les entreprises vers l'excellence opérationnelle et la croissance.",
+      "PORTFOLIO": "Portefeuille Tertiaire",
+      "COMPANIES": "Entreprises du Secteur",
+      "EXPERTISE": "Expertises",
+      "STRATEGIC_PARTNERS": "Partenaires Stratégiques"
+    }
+  },
+  "BANDEAU": {
+    "TEXT": "OSEOR est une holding spécialisée en investissement et en ingénierie financière. Nous accompagnons les PME et start-up à fort potentiel dans la structuration, le financement et le développement de leurs activités."
+  },
+  "CTA": {
+    "TITLE": "Vous êtes une entreprise à fort potentiel ?",
+    "DESC": "Parlons de votre projet et construisons ensemble votre succès futur.",
+    "BUTTON": "Nous contacter"
+  },
+  "PARTICIPATIONS": {
+    "TITLE": "Nos Participations",
+    "DESCRIPTION": "À travers ses prises de participation, OSEOR soutient la croissance de sociétés à fort potentiel et contribue à bâtir des groupes performants et durables.",
+    "FILTERS": {
+      "ALL": "Tous",
+      "ENERGY": "Énergie",
+      "SERVICES": "Services",
+      "INDUSTRY": "Industrie"
+    }
+  },
+  "ABOUT_PAGE": {
+    "BADGE": "À propos d’OSEOR",
+    "TITLE": "Une vision stratégique au service de la croissance",
+    "P1": "Fondée en 2015, OSEOR accompagne le développement de groupes d’entreprises à travers la prise de participation dans des sociétés à fort potentiel.",
+    "P2": "Aujourd’hui, l’entreprise compte 15 sociétés partenaires, illustrant la solidité de son positionnement et l’étendue de son engagement.",
+    "P3": "Devenue Société Anonyme (SA) en 2020–2021, OSEOR a renforcé sa crédibilité et sa capacité d’action. Son siège social est situé à Lomé, Agoènyivé, BKS 1, immeuble D&D.",
+    "GOV_TITLE": "Une gouvernance structurée",
+    "GOV_P1": "Un conseil d’administration, présidé par Monsieur DAOU AKLESSO Yérima, définit les grandes orientations stratégiques.",
+    "GOV_P2": "La direction générale est assurée par Monsieur Pascal PAMASSI, qui pilote le développement et la performance de l’entreprise."
+  },
+  "CAREERS_PAGE": {
+    "OFFERS_TITLE": "Offres d'emploi",
+    "OFFERS_SUBTITLE": "Découvrez les opportunités de carrière disponibles au sein des sociétés du groupe OSEOR et déposez votre candidature en ligne.",
+    "SPONTANEOUS_TITLE": "Candidature spontanée",
+    "SPONTANEOUS_SUBTITLE": "Vous ne trouvez pas d'offre correspondant à votre profil ? Déposez votre candidature spontanée et notre équipe l'examinera avec attention.",
+    "RH_EMAIL_TEXT": "Vous pouvez également envoyer votre candidature à l'adresse suivante :",
+    "RH_EMAIL_SPONTANEOUS_TEXT": "Vous pouvez également envoyer votre dossier de candidature à :",
+    "RH_EMAIL": "recrutement@oseor.tg",
+    "NO_OFFERS": "Aucune offre d'emploi disponible pour le moment.",
+    "POSTULER": "Postuler",
+    "APPLY_NOW": "Envoyer ma candidature",
+    "FORM": {
+      "FULL_NAME": "Nom complet",
+      "EMAIL": "Adresse email",
+      "PHONE": "Numéro de téléphone",
+      "POSITION": "Poste recherché",
+      "PRESENTATION": "Présentation du candidat",
+      "CV": "Curriculum Vitae (CV)",
+      "LM": "Lettre de motivation",
+      "DOCS": "Diplômes et attestations",
+      "ACCEPT_TERMS": "J'accepte les conditions de traitement de mes données personnelles.",
+      "REQUIRED": "Ce champ est obligatoire",
+      "INVALID_EMAIL": "Email invalide",
+      "INVALID_PHONE": "Téléphone invalide",
+      "FILE_TYPE": "Formats autorisés : PDF, DOC, DOCX",
+      "FILE_REQUIRED": "Ce fichier est obligatoire"
+    },
+    "CONFIRMATION": "Votre candidature a été enregistrée avec succès. Nous vous remercions de l'intérêt porté à OSEOR.",
+    "SPONTANEOUS_CONFIRMATION": "Votre candidature spontanée a été enregistrée avec succès. Nous vous remercions de votre intérêt pour OSEOR."
+  },
+  "BON_PLAN_PAGE": {
+    "BANNER_TEXT": "OSEOR célèbre ses 20 ans d'excellence au service des organisations d'Afrique de l'Ouest",
+    "HERO_DESC": "Offres spéciales, promotions et avantages exclusifs sélectionnés pour vous.",
+    "ZENCARD_BTN": "Recharger ma ZenCard",
+    "ACTIVE_OFFERS": "Offres actives",
+    "ADVANTAGE_CARD": "Votre carte avantages",
+    "MODAL_TITLE": "Recharge ZenCard",
+    "MODAL_DESC": "Rechargez votre carte avantages en quelques clics.",
+    "MODAL_STATUS": "Service bientôt disponible",
+    "MODAL_STATUS_DESC": "La recharge en ligne est en cours de déploiement. Contactez-nous pour toute urgence.",
+    "MODAL_CONTACT": "Nous contacter",
+    "MODAL_CLOSE": "Fermer",
+    "SECTION_TAG": "Offres & Promotions",
+    "SECTION_TITLE": "Nos bons plans du moment",
+    "ENLARGE": "Agrandir",
+    "OFFER1": "ZenCard — Offre Spéciale",
+    "OFFER2": "ZenCard — Promotion Exclusive",
+    "OFFER3": "ZenCard — Bon Plan #5",
+    "OFFER4": "ZenCard — Bon Plan #6",
+    "OFFER5": "ZenCard — Bon Plan #7",
+    "OFFER6": "ZenCard — Édition Spéciale",
+    "OFFER7": "ZenCard — Offre Limitée",
+    "OFFER8": "ZenCard — Le Produit"
+  },
+  "ADMIN": {
+    "SPACE": "Espace Admin",
+    "LOGIN_DESC": "Connectez-vous pour gérer OSEOR",
+    "EMAIL_LABEL": "Email professionnel",
+    "PASSWORD_LABEL": "Mot de passe",
+    "LOGIN_BTN": "Se connecter",
+    "INVALID_CREDENTIALS": "Identifiants invalides ou erreur serveur.",
+    "DASHBOARD_TITLE": "Vue d'ensemble",
+    "DASHBOARD_WELCOME": "Bienvenue dans votre tableau de bord OSEOR.",
+    "RECENT_ACTIVITY": "Activité récente",
+    "SYSTEM_STATUS": "Statut Système",
+    "ONLINE": "En ligne",
+    "CONNECTED": "Connecté",
+    "SIDEBAR_MANAGEMENT": "Gestion",
+    "SIDEBAR_SYSTEM": "Système",
+    "LOGOUT": "Déconnexion",
+    "NAV_ADMIN_SPACE": "Espace Administration",
+    "ADMINISTRATOR": "Administrateur",
+    "EXPERTISES_TITLE": "Expertises",
+    "EXPERTISES_DESC": "Gérez les expertises affichées sur le site.",
+    "PROJETS_TITLE": "Projets",
+    "PROJETS_DESC": "Gérez le portfolio de projets accompagnés.",
+    "MESSAGES_TITLE": "Messages",
+    "MESSAGES_DESC": "Consultez les demandes de contact reçues.",
+    "SETTINGS_TITLE": "Paramètres",
+    "SETTINGS_DESC": "Gérez votre profil et les configurations système.",
+    "ADD": "Ajouter",
+    "NEW_PROJECT": "Nouveau Projet",
+    "TABLE_ICON": "Icone",
+    "TABLE_TITLE": "Titre",
+    "TABLE_DESC": "Description",
+    "TABLE_ACTIONS": "Actions",
+    "CANCEL": "Annuler",
+    "SAVE": "Enregistrer",
+    "UPDATE": "Mettre à jour",
+    "NO_MESSAGE": "Aucun message",
+    "NO_MESSAGE_DESC": "Vous n'avez pas encore reçu de demandes de contact.",
+    "REPLY": "Répondre",
+    "PROFILE": "Profil Administrateur",
+    "NEW_PASSWORD": "Nouveau mot de passe",
+    "SAVE_CHANGES": "Sauvegarder les modifications",
+    "CATEGORY": "Catégorie",
+    "MESSAGES_EMPTY": "Aucun message",
+    "MESSAGES_EMPTY_DESC": "Vous n'avez pas encore reçu de demandes de contact."
+  },
+  "FOOTER": {
+    "DESCRIPTION": "OSEOR est une holding spécialisée en investissement et en ingénierie financière. Nous accompagnons les PME et start-up à fort potentiel dans la structuration, le financement et le développement de leurs activités.",
+    "QUICK_LINKS": "Liens utiles",
+    "CONTACT": "Contact",
+    "LEGAL": "Légal",
+    "PRIVACY": "Politique de confidentialité",
+    "TERMS": "Conditions générales",
+    "MENTIONS": "Mentions légales",
+    "RIGHTS": "Tous droits réservés.",
+    "MADE_BY": "Designed & Developed by KOMADAN Josué K.M."
+  },
+  "COMMON": {
+    "SEE_DETAILS": "Voir détails",
+    "LOADING": "Chargement...",
+    "ERROR": "Une erreur est survenue.",
+    "YEARS": "ans"
+  }
+}
