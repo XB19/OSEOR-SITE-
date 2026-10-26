@@ -80,7 +80,7 @@ export default function About() {
           <Stagger className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2" stagger={0.15}>
             {[
               { key: 'GOV_P1', icon: 'fa-landmark', name: 'DAOU AKLESSO Yérima' },
-              { key: 'GOV_P2', icon: 'fa-user-tie', name: 'Pascal PAMASSI' },
+              { key: 'GOV_P2', icon: 'fa-user-tie', name: 'Pascal Joseph PANASSI' },
             ].map((g) => (
               <StaggerItem key={g.key} className="group card relative overflow-hidden p-8 transition-shadow duration-500 hover:shadow-soft">
                 <span className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-gradient-to-r from-brand-blue to-brand-red transition-transform duration-500 group-hover:scale-x-100" />
