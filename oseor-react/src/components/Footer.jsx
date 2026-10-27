@@ -127,7 +127,6 @@ export default function Footer() {
             <span>{t('FOOTER.TERMS')}</span>
             <span>{t('FOOTER.MENTIONS')}</span>
           </div>
-          <p className="text-white/30">{t('FOOTER.MADE_BY')}</p>
         </div>
       </div>
     </footer>
