@@ -8,6 +8,7 @@ import { Stagger, StaggerItem, EASE } from '../components/Motion';
 import { BON_PLANS } from '../data/home';
 import { asset } from '../lib/asset';
 import { api } from '../lib/api';
+import { useBonPlan } from '../lib/bonplan';
 
 const imgSrc = (p) => (!p ? asset('assets/bon-plan/storage/kapi/banner_articles.jpg') : /^(https?:|data:|\/)/.test(p) ? p : asset(p));
 
@@ -114,11 +115,19 @@ function AnniversaryBanner() {
 }
 
 export default function BonPlan() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [zencardOpen, setZencardOpen] = useState(false);
   const [index, setIndex] = useState(null);
 
-  const go = useCallback((dir) => setIndex((i) => (i + dir + BON_PLANS.length) % BON_PLANS.length), []);
+  // Affiches et cartes : API Bon Plan du groupe, sinon le jeu local (BON_PLANS).
+  const local = {
+    posters: BON_PLANS.map((bp) => ({ id: bp.image, title: t(bp.titleKey), image: asset(bp.image), badge: 'ZenCard' })),
+    cards: [],
+  };
+  const { posters, cards } = useBonPlan(local, (i18n.language || 'fr').slice(0, 2));
+  const count = posters.length;
+
+  const go = useCallback((dir) => setIndex((i) => (i + dir + count) % count), [count]);
 
   useEffect(() => {
     if (index === null) return;
@@ -130,7 +139,7 @@ export default function BonPlan() {
     return () => window.removeEventListener('keydown', onKey);
   }, [index, go]);
 
-  const current = index !== null ? BON_PLANS[index] : null;
+  const current = index !== null ? posters[index] : null;
 
   return (
     <>
@@ -181,7 +190,7 @@ export default function BonPlan() {
 
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="mt-12 flex flex-wrap items-center justify-center gap-8">
             <div>
-              <p className="font-display text-3xl font-bold text-white">{BON_PLANS.length}</p>
+              <p className="font-display text-3xl font-bold text-white">{posters.length + cards.length}</p>
               <p className="mt-1 text-[11px] uppercase tracking-widest text-white/60">{t('BON_PLAN_PAGE.ACTIVE_OFFERS')}</p>
             </div>
             <span className="h-10 w-px bg-white/20" />
@@ -200,8 +209,8 @@ export default function BonPlan() {
         <div className="container-x">
           <SectionHeading eyebrow={t('BON_PLAN_PAGE.SECTION_TAG')} title={t('BON_PLAN_PAGE.SECTION_TITLE')} />
           <Stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" stagger={0.06}>
-            {BON_PLANS.map((bp, i) => (
-              <StaggerItem key={bp.image}>
+            {posters.map((bp, i) => (
+              <StaggerItem key={bp.id}>
                 <motion.button
                   type="button"
                   whileHover={{ y: -8 }}
@@ -209,8 +218,8 @@ export default function BonPlan() {
                   className="group block w-full overflow-hidden rounded-3xl bg-white text-left shadow-card transition-shadow duration-500 hover:shadow-soft"
                 >
                   <div className="relative aspect-[3/4] overflow-hidden">
-                    <img src={asset(bp.image)} alt={t(bp.titleKey)} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                    <span className="absolute left-4 top-4 rounded-full bg-gradient-to-r from-[#d4a94a] to-[#b8892a] px-3 py-1 text-[11px] font-bold text-white shadow">ZenCard</span>
+                    <img src={bp.image} alt={bp.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <span className="absolute left-4 top-4 rounded-full bg-gradient-to-r from-[#d4a94a] to-[#b8892a] px-3 py-1 text-[11px] font-bold text-white shadow">{bp.badge || 'ZenCard'}</span>
                     <div className="absolute inset-0 flex items-center justify-center bg-brand-blue/60 opacity-0 backdrop-blur-[2px] transition-opacity duration-500 group-hover:opacity-100">
                       <span className="flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-brand-blue">
                         <i className="fa-solid fa-magnifying-glass-plus" /> {t('BON_PLAN_PAGE.ENLARGE')}
@@ -218,13 +227,34 @@ export default function BonPlan() {
                     </div>
                   </div>
                   <div className="flex items-center justify-between gap-3 p-5">
-                    <span className="text-sm font-semibold text-slate-800">{t(bp.titleKey)}</span>
+                    <span className="text-sm font-semibold text-slate-800">{bp.title}</span>
                     <i className="fa-solid fa-arrow-right text-xs text-brand-blue transition-transform group-hover:translate-x-1" />
                   </div>
                 </motion.button>
               </StaggerItem>
             ))}
           </Stagger>
+          {cards.length > 0 && (
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
+              {cards.map((c) => (
+                <div key={c.id} className="rounded-3xl border border-[#f0c040]/60 bg-white p-7 shadow-card">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#fff3cc] text-xl text-[#b8892a]">
+                    <i className="fa-solid fa-lightbulb" />
+                  </div>
+                  {c.badge && (
+                    <span className="mt-4 inline-block rounded-full bg-gradient-to-r from-[#d4a94a] to-[#b8892a] px-3 py-1 text-[11px] font-bold text-white">{c.badge}</span>
+                  )}
+                  <h3 className="mt-3 text-lg font-bold leading-snug">{c.title}</h3>
+                  {c.text && <p className="mt-2 text-sm leading-relaxed text-slate-500">{c.text}</p>}
+                  {c.url && (
+                    <a href={c.url} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-brand-blue">
+                      {c.linkLabel || t('PROJETS_EXTRA.DETAILS')} <i className="fa-solid fa-arrow-right text-xs" />
+                    </a>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -254,7 +284,7 @@ export default function BonPlan() {
       </Modal>
 
       {/* Visionneuse */}
-      <Modal open={current !== null} onClose={() => setIndex(null)} size="max-w-2xl" dark label={current ? t(current.titleKey) : ''}>
+      <Modal open={current !== null} onClose={() => setIndex(null)} size="max-w-2xl" dark label={current ? current.title : ''}>
         {current && (
           <div className="flex flex-col items-center">
             <CloseButton light onClick={() => setIndex(null)} className="mb-4 self-end" />
@@ -264,9 +294,9 @@ export default function BonPlan() {
               </button>
               <AnimatePresence mode="wait">
                 <motion.img
-                  key={current.image}
-                  src={asset(current.image)}
-                  alt={t(current.titleKey)}
+                  key={current.id}
+                  src={current.image}
+                  alt={current.title}
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
@@ -279,7 +309,7 @@ export default function BonPlan() {
               </button>
             </div>
             <p className="mt-5 rounded-full bg-black/40 px-5 py-2 text-sm font-semibold text-white/90">
-              {t(current.titleKey)} · {index + 1}/{BON_PLANS.length}
+              {current.title} · {index + 1}/{count}
             </p>
           </div>
         )}
