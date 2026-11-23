@@ -1,27 +1,58 @@
 /**
  * Bon Plan API (central "Bons Plans & ZenCard" content of the OSEOR group).
  *
- * Switched on by VITE_BONPLAN_API_URL and VITE_BONPLAN_KEY (a publishable key, pk_…, created in
- * the Bon Plan admin for this site). When they are unset, or the API cannot be reached, the page
- * keeps showing its own local content, so it never breaks.
+ * One setting: VITE_BONPLAN_URL, the connection link generated in the Bon Plan admin
+ * (Sites → the site → Connexion du site), e.g. https://api.example/v1/sites/oseor?key=pk_…
+ * When it is unset, or the API cannot be reached, the page keeps showing its own local content.
+ * The page layout (texts, blocks, columns) is set per site in the admin and comes with the content.
  */
 import { useEffect, useState } from 'react';
 
-const BASE = (import.meta.env.VITE_BONPLAN_API_URL || '').replace(/\/+$/, '');
-const KEY = import.meta.env.VITE_BONPLAN_KEY || '';
-const SITE = import.meta.env.VITE_BONPLAN_SITE || 'oseor';
+function parseLink(link) {
+  try {
+    const u = new URL(link);
+    const m = u.pathname.match(/^(.*)\/v1\/sites\/([^/]+)\/?$/);
+    return m ? { base: u.origin + m[1], site: decodeURIComponent(m[2]), key: u.searchParams.get('key') || '' } : null;
+  } catch {
+    return null;
+  }
+}
+
+const env = import.meta.env;
+const LINK = parseLink(env.VITE_BONPLAN_URL || '');
+// The three separate variables are still accepted (older configuration).
+const BASE = LINK ? LINK.base : (env.VITE_BONPLAN_API_URL || '').replace(/\/+$/, '');
+const KEY = LINK ? LINK.key : env.VITE_BONPLAN_KEY || '';
+const SITE = LINK ? LINK.site : env.VITE_BONPLAN_SITE || 'oseor';
 
 export const bonPlanEnabled = Boolean(BASE && KEY);
 
+/** Layout used until the API answers (or when it is off): everything shown, the site's own texts. */
+export const DEFAULT_PAGE = {
+  showCounter: true,
+  showZencardButton: true,
+  showCards: true,
+  columns: 4,
+  texts: {
+    heroEyebrow: null,
+    heroTitle: null,
+    heroText: null,
+    buttonLabel: null,
+    sectionEyebrow: null,
+    sectionTitle: null,
+  },
+};
+
 /**
- * All visible promotions of this site, split into posters (image) and text cards.
- * Returns null when the API is off or unavailable.
+ * All visible promotions of this site, split into posters (image) and text cards, plus the page
+ * layout. Returns null when the API is off or unavailable.
  */
 export async function fetchBonPlan(locale = 'fr', signal) {
   if (!bonPlanEnabled) return null;
   try {
     const items = [];
     let cursor = null;
+    let page = DEFAULT_PAGE;
     do {
       const q = new URLSearchParams({ locale, limit: '50' });
       if (cursor) q.set('cursor', cursor);
@@ -30,11 +61,13 @@ export async function fetchBonPlan(locale = 'fr', signal) {
         signal,
       });
       if (!res.ok) throw new Error(`Bon Plan API: HTTP ${res.status}`);
-      const page = await res.json();
-      items.push(...page.items);
-      cursor = page.nextCursor;
+      const data = await res.json();
+      items.push(...data.items);
+      cursor = data.nextCursor;
+      if (data.page) page = data.page;
     } while (cursor);
     return {
+      page,
       posters: items
         .filter((p) => p.kind === 'poster' && p.image)
         .map((p) => ({ id: p.id, title: p.title, image: p.image.url, badge: p.badge, url: p.ctaUrl })),
@@ -58,7 +91,7 @@ export async function fetchBonPlan(locale = 'fr', signal) {
 
 /**
  * The page's content: from the API when it answers, else `fallback` ({ posters, cards }, same shape).
- * `loading` is true only while the API is being asked.
+ * `page` is the layout set in the admin; `loading` is true only while the API is being asked.
  */
 export function useBonPlan(fallback, locale = 'fr') {
   const [state, setState] = useState({ data: null, loading: bonPlanEnabled });
@@ -71,5 +104,12 @@ export function useBonPlan(fallback, locale = 'fr') {
     });
     return () => ctrl.abort();
   }, [locale]);
-  return { ...(state.data ?? fallback), fromApi: Boolean(state.data), loading: state.loading };
+  const data = state.data ?? fallback ?? {};
+  return {
+    posters: data.posters ?? [],
+    cards: data.cards ?? [],
+    page: state.data?.page ?? DEFAULT_PAGE,
+    fromApi: Boolean(state.data),
+    loading: state.loading,
+  };
 }

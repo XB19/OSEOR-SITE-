@@ -124,7 +124,10 @@ export default function BonPlan() {
     posters: BON_PLANS.map((bp) => ({ id: bp.image, title: t(bp.titleKey), image: asset(bp.image), badge: 'ZenCard' })),
     cards: [],
   };
-  const { posters, cards } = useBonPlan(local, (i18n.language || 'fr').slice(0, 2));
+  // Layout set in the Bon Plan admin (texts: null = this site's own translated text).
+  const { posters, cards: allCards, page } = useBonPlan(local, (i18n.language || 'fr').slice(0, 2));
+  const cards = page.showCards ? allCards : [];
+  const tx = page.texts;
   const count = posters.length;
 
   const go = useCallback((dir) => setIndex((i) => (i + dir + count) % count), [count]);
@@ -160,7 +163,7 @@ export default function BonPlan() {
 
         <div className="container-x">
           <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-xs font-bold uppercase tracking-[0.3em] text-[#f5d78e]">
-            OSEOR
+            {tx.heroEyebrow ?? 'OSEOR'}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
@@ -168,11 +171,16 @@ export default function BonPlan() {
             transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
             className="mt-4 text-4xl font-bold !text-white md:text-6xl"
           >
-            {t('BON_PLAN_EXTRA.TITLE')} <span className="text-gradient-gold">&</span> ZenCard
+            {tx.heroTitle ?? (
+              <>
+                {t('BON_PLAN_EXTRA.TITLE')} <span className="text-gradient-gold">&</span> ZenCard
+              </>
+            )}
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="mx-auto mt-5 max-w-lg text-lg text-white/80">
-            {t('BON_PLAN_PAGE.HERO_DESC')}
+            {tx.heroText ?? t('BON_PLAN_PAGE.HERO_DESC')}
           </motion.p>
+          {page.showZencardButton && (
           <motion.button
             type="button"
             onClick={() => setZencardOpen(true)}
@@ -185,9 +193,11 @@ export default function BonPlan() {
             className="mt-10 inline-flex items-center gap-3 rounded-full bg-gradient-to-br from-[#d4a94a] to-[#b8892a] px-9 py-4 font-bold text-white shadow-xl"
           >
             <i className="fa-solid fa-credit-card" />
-            {t('BON_PLAN_PAGE.ZENCARD_BTN')}
+            {tx.buttonLabel ?? t('BON_PLAN_PAGE.ZENCARD_BTN')}
           </motion.button>
+          )}
 
+          {page.showCounter && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="mt-12 flex flex-wrap items-center justify-center gap-8">
             <div>
               <p className="font-display text-3xl font-bold text-white">{posters.length + cards.length}</p>
@@ -199,6 +209,7 @@ export default function BonPlan() {
               <p className="mt-1 text-[11px] uppercase tracking-widest text-white/60">{t('BON_PLAN_PAGE.ADVANTAGE_CARD')}</p>
             </div>
           </motion.div>
+          )}
         </div>
       </section>
 
@@ -207,8 +218,11 @@ export default function BonPlan() {
       {/* Galerie */}
       <section className="section bg-slate-50">
         <div className="container-x">
-          <SectionHeading eyebrow={t('BON_PLAN_PAGE.SECTION_TAG')} title={t('BON_PLAN_PAGE.SECTION_TITLE')} />
-          <Stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" stagger={0.06}>
+          <SectionHeading
+            eyebrow={tx.sectionEyebrow ?? t('BON_PLAN_PAGE.SECTION_TAG')}
+            title={tx.sectionTitle ?? t('BON_PLAN_PAGE.SECTION_TITLE')}
+          />
+          <Stagger className={`grid gap-6 sm:grid-cols-2 ${page.columns === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'}`} stagger={0.06}>
             {posters.map((bp, i) => (
               <StaggerItem key={bp.id}>
                 <motion.button
